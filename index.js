@@ -64,8 +64,8 @@ const getPlayers = () => {
 const getPlayerById = id => {
     return new Promise((resolve, reject) => {
         let query = {
-            name: "fetch-player-by-id",
-            text: "SELECT * FROM players WHERE player_id =" + id
+            name: "fetch-player-by-id" + id,
+            text: "SELECT * FROM players WHERE player_id=" + id
         };
         pool.query(query, (err, res) => {
             if (err) {
